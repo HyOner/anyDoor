@@ -1,14 +1,15 @@
 {
-    "name": "anydoor",
+    "name": "anyhole",
     "version": "0.1.0",
-    "description": "tiny nodejs web server",
+    "description": "a mini node web server",
     "main": "src/app.js",
     "bin": {
-        "anydoor": "bin/anydoor"
+        "anyhole": "bin/anyhole"
     },
     "scripts": {
         "lint": "eslint .",
-        "fix": "eslint --fix ."
+        "fix": "eslint --fix .",
+        "start": "node src/index.js"
     },
     "pre-commit": [
         "fix",
@@ -16,19 +17,19 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Samaritan89/anydoor.git"
+        "url": "git+https://github.com/HyOner/anyhole"
     },
     "keywords": [
         "static",
         "webserver"
     ],
-    "author": "Samaritan89",
-    "email": "sunluyong@gmail.com",
-    "license": "ISC",
+    "author": "HyOner",
+    "email": "han_joe@outlook.com",
+    "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Samaritan89/anydoor/issues"
+        "url": "https://github.com/HyOner/anyhole/issues"
     },
-    "homepage": "https://github.com/Samaritan89/anydoor#readme",
+    "homepage": "https://github.com/HyOner/anyhole#readme",
     "devDependencies": {
         "babel-eslint": "^7.2.3",
         "eslint": "^4.5.0",

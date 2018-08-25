@@ -5,13 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_806167_izh6hlk8x2p.css
+">
     <title>{{title}}</title>
+    <style>
+        body {
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+        h2{
+            align-self: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            padding: 20px 0;
+            align-self: center;
+            width: 1160px;
+            height: 100%;
+            margin-bottom: 30px;
+            background-color: #eee;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .file_warpper {
+            height: 40px;
+            width: 20%;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .file_warpper a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .file_warpper .dir {
+            color: #369be9;
+        }
+
+        .file_warpper a:hover {
+            color: #369be9;
+        }
+
+    </style>
 </head>
 
 <body>
-    {{each files}}
-    <a href="{{dir}}/{{$value}}">{{$value}}</a>
-    {{/each}}
+    <h2>Mini Static Server</h2>
+    <div class="container">
+        {{each files}}
+        <div class="file_warpper">
+            <!-- {{if $value.dir}}
+            <a class="dir" href="{{dir}}/{{$value}}">{{$value}}</a>
+            {{/if}} -->
+            <a href="{{dir}}/{{$value}}">{{$value}}</a>
+        </div>
+        {{/each}}
+    </div>
 </body>
-
+<script>
+</script>
 </html>
+
