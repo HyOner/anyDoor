@@ -15,7 +15,7 @@ const argv = yargs
         default: '127.0.0.1'
 
     })
-    .option('r', {
+    .option('d', {
         alias: 'root',
         describe: '根目录',
         default: process.cwd()

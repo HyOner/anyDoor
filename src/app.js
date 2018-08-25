@@ -11,7 +11,10 @@ class Server {
     }
     start() {
         const server = http.createServer((req, res) => {
-            const url = req.url;
+            let url = req.url;
+            if(url === '/favicon.ico'){
+                url = '/';
+            }
             const filePath = path.join(this.conf.root, url);
             router(req, res, filePath, this.conf)
         });

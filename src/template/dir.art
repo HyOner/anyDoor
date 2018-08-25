@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_806167_izh6hlk8x2p.css
-">
     <title>{{title}}</title>
     <style>
         body {
@@ -24,7 +22,7 @@
         .container {
             padding: 20px 0;
             align-self: center;
-            width: 1160px;
+            width: 80%;
             height: 100%;
             margin-bottom: 30px;
             background-color: #eee;
@@ -34,7 +32,7 @@
 
         .file_warpper {
             height: 40px;
-            width: 20%;
+            width: 25%;
             text-align: center;
             line-height: 40px;
         }

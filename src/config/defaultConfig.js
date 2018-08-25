@@ -5,9 +5,9 @@ module.exports = {
     compress: /\.(html|js|css|md)/,
     cache: {
         maxAge: 600,
-        expires: true,
-        cacheControl: true,
-        lastModified: true,
+        expires: false,
+        cacheControl: false,
+        lastModified: false,
         etag: true
     }
 

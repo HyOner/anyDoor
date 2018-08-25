@@ -5,10 +5,7 @@ const {
     promisify
 } = require('util');
 const art = require('art-template');
-const {
-    getContentType,
-    // getContentIcon
-} = require('../helper/mime');
+const mime = require('../helper/mime');
 const isFresh = require('../helper/cache');
 const compress = require('./compress');
 
@@ -21,7 +18,7 @@ const template = art.compile(source);
 module.exports = async function (req, res, filePath, conf) {
     try {
         const stats = await stat(filePath)
-        const ContentType = getContentType(filePath);
+        const ContentType = mime(filePath);
         if (stats.isFile()) {
             if (isFresh(stats, req, res)) {
                 res.statusCode = 304;
@@ -30,7 +27,8 @@ module.exports = async function (req, res, filePath, conf) {
             }
             res.statusCode = 200;
             res.setHeader('Content-Type', ContentType);
-            let rs = fs.createReadStream(filePath);
+            // FIXME:读取文件中文乱码的问题还没解决
+            let rs = fs.createReadStream(filePath, {encoding:'utf8'});
             // 如果文件匹配压缩,则执行压缩
             if (filePath.match(conf.compress)) {
                 rs = compress(rs, req, res)
@@ -67,7 +65,7 @@ module.exports = async function (req, res, filePath, conf) {
     } catch (err) {
         console.log(chalk.red(err));
         res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/plain')
+        res.setHeader('Content-Type', 'text/plain;charset=utf-8')
         res.end(`${filePath} is not a directory or file`);
     }
 }
